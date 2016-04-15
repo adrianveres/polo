@@ -2,8 +2,8 @@ Python Optimal Leaf Ordering for Hierarchical Clustering
 ========================================================
 
 Polo is a python script to obtain optimal linear ordering of hierarchical clusters, 
-using the algorithm described in [Fast Optimal leaf ordering for hierarchical clustering], *Bioinformatics 2001*
-(http://bioinformatics.oxfordjournals.org/content/17/suppl_1/S22.long) 
+using the algorithm described in [Fast Optimal leaf ordering for hierarchical clustering]
+(http://bioinformatics.oxfordjournals.org/content/17/suppl_1/S22.long), *Bioinformatics 2001*
 by Ziv Bar-Joseph, David K. Gifford, Tommi S. Jaakkola.
 
 When a hierarchical cluster with n leaves is displayed as a dendrogram, there are 

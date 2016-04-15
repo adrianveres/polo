@@ -10,7 +10,7 @@ try:
 except ImportError:
     from scipy.cluster.hierarchy import linkage
 
-import polo
+from polo import optimal_leaf_ordering
 
 def get_cell_data(n=50, seed=0):
     np.random.seed(seed)
@@ -34,7 +34,7 @@ def get_random_data(n=50, seed=0):
 
 def run_polo(Z, D):
     start_time = time.time()
-    best_Z = polo.optimal_leaf_ordering(Z, D)
+    best_Z = optimal_leaf_ordering(Z, D)
     end_time = time.time()
     return end_time - start_time, best_Z
 
@@ -142,9 +142,9 @@ def make_figure():
     axh2.set_xticks([])
     axh2.set_yticks([])
 
-    fig.savefig('data/demo.png', dpi=150)
+    fig.savefig('data/demo.png', dpi=75)
 if __name__=="__main__":
     make_figure()
-    benchmark()
-    make_benchmark_figure()
+    # benchmark()
+    #make_benchmark_figure()
     

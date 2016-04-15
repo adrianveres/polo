@@ -1,1 +1,1 @@
-from polo import optimal_leaf_ordering
+from polo.polo import optimal_leaf_ordering
