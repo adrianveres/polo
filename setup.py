@@ -16,18 +16,18 @@ ext_modules = []
 
 if use_cython:
     ext_modules += [
-        Extension("polo/polo", [ "polo/polo.pyx" ], include_dirs=[numpy.get_include()]),
+        Extension("polo.polo", [ "polo/polo.pyx" ], include_dirs=[numpy.get_include()]),
     ]
     cmdclass.update({ 'build_ext': build_ext })
 else:
     ext_modules += [
-        Extension("polo/polo", [ "polo/polo.c" ], include_dirs=[numpy.get_include()]),
+        Extension("polo.polo", [ "polo/polo.c" ], include_dirs=[numpy.get_include()]),
     ]
 
 setup(
     name = "polo",
     packages = ['polo'],
-    version = '0.1',
+    version = '0.2',
     description = 'Optimal Linear Ordering of Hierarchical Trees',
     author = 'Adrian Veres',
     author_email = 'adrianveres@gmail.com',
