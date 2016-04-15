@@ -16,12 +16,12 @@ ext_modules = []
 
 if use_cython:
     ext_modules += [
-        Extension("polo.polo", [ "polo/polo.pyx" ], include_dirs=[numpy.get_include()]),
+        Extension("polo", [ "polo/polo.pyx" ], include_dirs=[numpy.get_include()]),
     ]
     cmdclass.update({ 'build_ext': build_ext })
 else:
     ext_modules += [
-        Extension("polo.polo", [ "polo/polo.c" ], include_dirs=[numpy.get_include()]),
+        Extension("polo", [ "polo/polo.c" ], include_dirs=[numpy.get_include()]),
     ]
 
 setup(
