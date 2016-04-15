@@ -119,7 +119,7 @@ def make_figure():
 
     fig = plt.figure(figsize=(5,5))
     axd1 = fig.add_subplot(gs[0,0])
-    axd1.set_title("Random numbers, clustered using Ward's criterion, default linear ordering.", fontsize=8)
+    axd1.set_title("Random numbers, clustered using Ward's criterion, default linear ordering.", fontsize=10)
     dendrogram(Z, ax=axd1, link_color_func=lambda k: 'k')
     axd1.set_xticklabels(data[order].reshape(-1))
     axd1.set_xticks([])
@@ -131,7 +131,7 @@ def make_figure():
     axh1.set_yticks([])
 
     axd2 = fig.add_subplot(gs[3,0])
-    axd2.set_title("The same hierarchical clustering, arranged for optimal linear ordering.", fontsize=8)
+    axd2.set_title("The same hierarchical clustering, arranged for optimal linear ordering.", fontsize=10)
     dendrogram(opt_Z, ax=axd2, link_color_func=lambda k: 'k')
     axd2.set_xticklabels(data[opt_order].reshape(-1))
     axd2.set_xticks([])
