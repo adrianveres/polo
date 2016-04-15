@@ -27,7 +27,7 @@ else:
 setup(
     name = "polo",
     packages = ['polo'],
-    version = '0.4',
+    version = '0.5',
     description = 'Optimal Linear Ordering of Hierarchical Trees',
     author = 'Adrian Veres',
     author_email = 'adrianveres@gmail.com',

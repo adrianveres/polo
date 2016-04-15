@@ -142,7 +142,7 @@ def make_figure():
     axh2.set_xticks([])
     axh2.set_yticks([])
 
-    fig.savefig('data/demo.png', dpi=120)
+    fig.savefig('data/demo.png', dpi=130)
 if __name__=="__main__":
     make_figure()
     # benchmark()
