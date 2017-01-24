@@ -17,7 +17,7 @@ before_install:
 - conda info -a
 
 install:
-- conda env create -n testenv python=$TRAVIS_PYTHON_VERSION numpy
+- conda create -n testenv python=$TRAVIS_PYTHON_VERSION numpy
 - source activate testenv
 - pip install .
 
