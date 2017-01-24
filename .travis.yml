@@ -17,7 +17,7 @@ before_install:
 - conda info -a
 
 install:
-- conda create -n testenv python=$TRAVIS_PYTHON_VERSION numpy
+- conda create -n testenv python=$TRAVIS_PYTHON_VERSION numpy matplotlib
 - source activate testenv
 - pip install .
 
