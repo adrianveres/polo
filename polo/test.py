@@ -1,7 +1,8 @@
-import numpy as np
-
 import time
 
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+import numpy as np
 from scipy.spatial.distance import pdist, squareform
 from scipy.cluster.hierarchy import leaves_list, dendrogram
 
@@ -10,7 +11,6 @@ try:
 except ImportError:
     from scipy.cluster.hierarchy import linkage
 
-from polo import optimal_leaf_ordering
 
 def get_cell_data(n=50, seed=0):
     np.random.seed(seed)
@@ -33,6 +33,8 @@ def get_random_data(n=50, seed=0):
 
 
 def run_polo(Z, D):
+    from polo import optimal_leaf_ordering
+
     start_time = time.time()
     best_Z = optimal_leaf_ordering(Z, D)
     end_time = time.time()
@@ -78,9 +80,6 @@ def benchmark():
     np.save('./data/real_data_orange3_benchmark.npy', np.array(orange_data))
 
 def make_benchmark_figure():
-    from scipy.cluster.hierarchy import leaves_list, dendrogram
-    import matplotlib.pyplot as plt
-    import matplotlib.gridspec as gridspec
 
     fig = plt.figure(figsize=(6,6))
     ax = fig.add_subplot(1, 1, 1, xscale='linear', yscale='log')
@@ -102,10 +101,6 @@ def make_benchmark_figure():
     fig.savefig('data/bench.png', dpi=75)
 
 def make_figure():
-    from scipy.cluster.hierarchy import leaves_list, dendrogram
-    import matplotlib.pyplot as plt
-    import matplotlib.gridspec as gridspec
-
     gs = gridspec.GridSpec(5, 1,
                        height_ratios=[3, 1, 2, 3, 1],
                        hspace=0)
@@ -143,6 +138,8 @@ def make_figure():
     axh2.set_yticks([])
 
     fig.savefig('data/demo.png', dpi=130)
+
+
 if __name__=="__main__":
     make_figure()
     # benchmark()
