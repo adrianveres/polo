@@ -24,6 +24,9 @@ else:
         Extension("polo.polo", [ "polo/polo.c" ], include_dirs=[numpy.get_include()]),
     ]
 
+with open('requirements.txt') as requirements_file:
+    requirements = requirements_file.read()
+
 setup(
     name = "polo",
     packages = ['polo'],
@@ -37,7 +40,7 @@ setup(
     cmdclass = cmdclass,
     ext_modules=ext_modules,
     classifiers = [],
-    install_requires=['numpy', 'scipy'],
+    install_requires=requirements,
     package_data={'polo': ['data/*']},
     )
 

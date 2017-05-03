@@ -1,0 +1,32 @@
+language: python
+
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+- '3.6'
+
+before_install:
+# http://conda.pydata.org/docs/travis.html#the-travis-yml-file
+- wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+- bash miniconda.sh -b -p $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
+- hash -r
+- conda config --set always_yes yes --set changeps1 no
+- conda update -q conda
+- conda info -a
+
+install:
+- conda create -n testenv python=$TRAVIS_PYTHON_VERSION --file testing_requirements.txt
+- source activate testenv
+- pip install fastcluster
+- pip install .
+
+before_script:
+- cp testing/matplotlibrc .
+
+script:
+- python polo/test.py
+
+after_script:
+- rm matplotlibrc
