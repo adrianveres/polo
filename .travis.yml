@@ -22,11 +22,5 @@ install:
 - pip install fastcluster
 - pip install .
 
-before_script:
-- cp testing/matplotlibrc .
-
 script:
 - python polo/test.py
-
-after_script:
-- rm matplotlibrc

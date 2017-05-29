@@ -1,5 +1,6 @@
 import time
-
+import matplotlib as mpl
+mpl.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import numpy as np
@@ -144,4 +145,3 @@ if __name__=="__main__":
     make_figure()
     # benchmark()
     #make_benchmark_figure()
-    
